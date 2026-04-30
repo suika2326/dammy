@@ -2,62 +2,282 @@
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
-<title>タロット鑑定LP</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>迷いをほどくタロット鑑定</title>
 
 <style>
+* {
+  box-sizing: border-box;
+}
+
 body {
-  font-family: serif;
   margin: 0;
-  background: #faf6fb;
+  font-family: "Hiragino Mincho ProN", "Yu Mincho", serif;
+  color: #3a2f45;
+  background: #fbf7ff;
+  line-height: 1.8;
+}
+
+section {
+  padding: 80px 20px;
+}
+
+.inner {
+  max-width: 980px;
+  margin: 0 auto;
 }
 
 .fv {
-  background: linear-gradient(#5e3a8c, #b89bd9);
-  color: white;
+  min-height: 90vh;
+  display: flex;
+  align-items: center;
   text-align: center;
-  padding: 100px 20px;
+  color: #fff;
+  background:
+    linear-gradient(rgba(55,30,85,.65), rgba(160,125,190,.75)),
+    radial-gradient(circle at top, #d8c0ff, #5e3a8c);
+}
+
+.fv h1 {
+  font-size: 42px;
+  line-height: 1.5;
+  margin-bottom: 24px;
+}
+
+.fv p {
+  font-size: 18px;
+  margin-bottom: 36px;
 }
 
 .btn {
   display: inline-block;
-  margin-top: 20px;
-  padding: 12px 24px;
-  background: #ffccff;
-  color: #333;
+  padding: 15px 36px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #f7d6ff, #fff2c7);
+  color: #4a2b5f;
   text-decoration: none;
-  border-radius: 30px;
+  font-weight: bold;
+  box-shadow: 0 10px 30px rgba(80,40,120,.25);
+}
+
+.label {
+  display: inline-block;
+  margin-bottom: 16px;
+  color: #8a62aa;
+  font-size: 14px;
+  letter-spacing: .12em;
+}
+
+h2 {
+  font-size: 30px;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.lead {
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto 40px;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+
+.card {
+  background: #fff;
+  padding: 28px;
+  border-radius: 24px;
+  box-shadow: 0 10px 30px rgba(70,40,90,.08);
+}
+
+.bg-soft {
+  background: #f3ecf9;
+}
+
+.profile {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: 40px;
+  align-items: center;
+}
+
+.photo {
+  aspect-ratio: 1 / 1;
+  border-radius: 32px;
+  background: linear-gradient(135deg, #d7b7ef, #fff2c7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #6b4a80;
+}
+
+.steps {
+  counter-reset: step;
+}
+
+.step {
+  background: #fff;
+  border-radius: 24px;
+  padding: 26px;
+  margin-bottom: 18px;
+  box-shadow: 0 8px 24px rgba(70,40,90,.07);
+}
+
+.voice {
+  background: #fff;
+  border-left: 5px solid #b58ad4;
+  padding: 26px;
+  border-radius: 18px;
+  margin-bottom: 18px;
+}
+
+.cta {
+  text-align: center;
+  background: linear-gradient(135deg, #4c2a70, #9c78c1);
+  color: #fff;
+}
+
+.faq dt {
+  font-weight: bold;
+  margin-top: 24px;
+}
+
+.faq dd {
+  margin-left: 0;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #e5d9ee;
+}
+
+footer {
+  text-align: center;
+  padding: 30px;
+  font-size: 13px;
+  color: #8a7a95;
+}
+
+@media (max-width: 768px) {
+  .fv h1 {
+    font-size: 30px;
+  }
+
+  .cards,
+  .profile {
+    grid-template-columns: 1fr;
+  }
+
+  section {
+    padding: 60px 18px;
+  }
 }
 </style>
-
 </head>
 
 <body>
 
-<div class="fv">
-  <h1>迷いを手放すタロット鑑定</h1>
-  <p>あなたの未来に、優しく寄り添います</p>
-  <a href="#" class="btn">今すぐ相談する</a>
-</div>
+<header class="fv">
+  <div class="inner">
+    <span class="label">TAROT READING</span>
+    <h1>もう一人で悩まなくて大丈夫。<br>あなたの心に、やさしい答えを。</h1>
+    <p>恋愛・人間関係・これからの生き方に迷う女性のためのタロット鑑定</p>
+    <a href="#" class="btn">初回鑑定を申し込む</a>
+  </div>
+</header>
 
-  <section style="padding:60px 20px; text-align:center;">
-  <h2>こんなお悩みありませんか？</h2>
-  <ul style="list-style:none; padding:0;">
-    <li>彼の気持ちが分からない</li>
-    <li>連絡が来なくて不安</li>
-    <li>この恋がどうなるのか知りたい</li>
-  </ul>
+<section>
+  <div class="inner">
+    <span class="label">PAIN</span>
+    <h2>こんな気持ちを抱えていませんか？</h2>
+    <div class="cards">
+      <div class="card">彼の気持ちが分からず、何度もスマホを見てしまう</div>
+      <div class="card">誰にも相談できず、夜になると不安が大きくなる</div>
+      <div class="card">このまま進んでいいのか、自分の選択に自信が持てない</div>
+    </div>
+  </div>
 </section>
 
-<section style="padding:60px 20px; text-align:center; background:#f3ecf9;">
-  <h2>その悩み、タロットで解決できます</h2>
-  <p>あなたの今の状況と未来を読み解き、最適な選択を導きます。</p>
+<section class="bg-soft">
+  <div class="inner">
+    <span class="label">MESSAGE</span>
+    <h2>うまくいかないのは、あなたのせいではありません</h2>
+    <p class="lead">
+      頑張っているのに心が苦しいとき、必要なのはもっと我慢することではなく、
+      今の状況を少し離れた視点から見つめることです。
+      タロットは、あなたの本音と未来へのヒントを映し出す鏡になります。
+    </p>
+  </div>
 </section>
 
-<section style="padding:60px 20px; text-align:center;">
-  <h2>今すぐ鑑定を受ける</h2>
-  <a href="#" class="btn">LINEで相談する</a>
+<section>
+  <div class="inner profile">
+    <div class="photo">占い師プロフィール写真</div>
+    <div>
+      <span class="label">PROFILE</span>
+      <h2 style="text-align:left;">あなたの気持ちを否定せず、丁寧に読み解きます</h2>
+      <p>
+        はじめまして。タロット鑑定士の〇〇です。
+        私自身もかつて、恋愛や人間関係で深く悩み、誰にも相談できない時期がありました。
+        だからこそ、鑑定では「当てる」だけでなく、心が軽くなり、次の一歩を選べる時間を大切にしています。
+      </p>
+    </div>
+  </div>
 </section>
-  
+
+<section class="bg-soft">
+  <div class="inner">
+    <span class="label">SERVICE</span>
+    <h2>鑑定でわかること</h2>
+    <div class="steps">
+      <div class="step">1. 今のあなたの心の状態</div>
+      <div class="step">2. お相手の気持ちや関係の流れ</div>
+      <div class="step">3. これから取ると良い行動</div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="inner">
+    <span class="label">VOICE</span>
+    <h2>お客様の声</h2>
+    <div class="voice">
+      「最初は半信半疑でしたが、今の状況を言葉にしてもらえて涙が出ました。焦らず向き合えそうです。」
+    </div>
+    <div class="voice">
+      「誰にも話せなかった恋愛の悩みを、否定せず聞いてもらえて安心しました。」
+    </div>
+  </div>
+</section>
+
+<section class="bg-soft">
+  <div class="inner faq">
+    <span class="label">FAQ</span>
+    <h2>よくある質問</h2>
+    <dl>
+      <dt>Q. 占いが初めてでも大丈夫ですか？</dt>
+      <dd>A. はい。専門用語を使わず、わかりやすくお伝えします。</dd>
+
+      <dt>Q. 無理な勧誘はありますか？</dt>
+      <dd>A. ありません。安心してご相談ください。</dd>
+
+      <dt>Q. どんな悩みでも相談できますか？</dt>
+      <dd>A. 恋愛、人間関係、仕事、将来の不安など幅広く対応しています。</dd>
+    </dl>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="inner">
+    <h2>今の苦しさを、ひとりで抱え込まないでください</h2>
+    <p>あなたの心が少し軽くなるように、丁寧に鑑定します。</p>
+    <a href="#" class="btn">LINEで相談する</a>
+  </div>
+</section>
+
+<footer>
+  © Tarot Reading Sample LP
+</footer>
 
 </body>
 </html>
